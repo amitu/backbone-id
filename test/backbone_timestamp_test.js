@@ -1,0 +1,2 @@
+describe('Backbone.Timestamp', function() {
+});

@@ -1,0 +1,28 @@
+{
+  "name": "backbone.id",
+  "version": "0.1.0",
+  "description": "...",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Ask11/backbone.id.git"
+  },
+  "keywords": [],
+  "author": "Aleksey Kulikov",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build": "./node_modules/grunt/bin/grunt",
+    "stat": "cloc backbone.position.js && cloc test/ --by-file",
+    "test": "./node_modules/testem/testem.js ci"
+  },
+  "devDependencies": {
+    "chai": "latest",
+    "testem": "latest",
+    "jquery-browser": "~1.9.1",
+    "underscore": "~1.4.4",
+    "backbone": "~0.9.10",
+    "grunt": "~0.4.0",
+    "grunt-contrib-uglify": "~0.1.2",
+    "grunt-contrib-jshint": "~0.2.0"
+  }
+}
