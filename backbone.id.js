@@ -7,6 +7,15 @@
 ;(function(Backbone, _) {
   'use strict';
 
+  var increment = 0x1000000
+    , localId1  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1)
+    , localId2  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1);
+
+  function mongo() {
+    var dateNow = ((new Date()).getTime()/100 | 0).toString(16);
+    return dateNow + localId1 + localId2 + (++increment).toString(16).substring(1);
+  }
+
   // http://stackoverflow.com/a/2117523/893744
   function guid() {
     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
@@ -15,31 +24,17 @@
     });
   }
 
-  Backbone.Id = function(Model, options) {
+  Backbone.Id = function(Model, method) {
     var idAttribute = Model.prototype.idAttribute
       , defaults    = Model.prototype.defaults;
 
+    if (method === 'mongo') method = mongo;
+    if (!method || method === 'guid') method = guid;
+
     Model.prototype.defaults = function() {
       var id = {};
-      id[idAttribute] = guid();
-      return _.defaults(defaults, id);
+      id[idAttribute] = method();
+      return _.defaults(defaults || {}, id);
     };
   };
 }).call(this, Backbone, _);
-
-// increment = 0x1000000
-// localId1  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1)
-// localId2  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1)
-
-// objectId = ->
-//   ((new Date).getTime()/100 | 0).toString(16) + localId1 + localId2 + (++increment).toString(16).substring(1)
-
-// module.exports = Model = Backbone.Model.extend
-//   idAttribute: '_id'
-//   isNew: ->
-//     !!@get('_new')
-
-// Backbone.Timestamp(Model)
-
-// Model.create = (attrs = {}, options = {}) ->
-//   new @(_.extend(attrs, {_id: objectId(), _new: true}), options)

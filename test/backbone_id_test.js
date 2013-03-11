@@ -16,9 +16,9 @@ describe('Backbone.Id', function() {
        expect(book.get('title')).equal('The Lord of the Rings');
        expect(book.get('author')).equal('unknown');
 
-       // About UUID format https://gist.github.com/jed/982883#file-readme-md
        expect(book.id).exist;
-       expect(book.id).length(36);
+       expect(book.get('_id')).length(36);
+       // About UUID format https://gist.github.com/jed/982883#file-readme-md
        expect(book.id).match(/^[a-f,0-9]{8}\-[a-f,0-9]{4}\-4[a-f,0-9]{3}\-[a-b,8-9][a-f,0-9]{3}\-[a-f,0-9]{12}$/);
     });
 
@@ -33,11 +33,22 @@ describe('Backbone.Id', function() {
     it('does not change id on updates', function() {
       // body...
     });
+
+    it('generates mongo-like id', function() {
+      var Model = Backbone.Model.extend({});
+      Backbone.Id(Model, 'mongo');
+
+      var model = new Model({ name: 'test mongo id generator' });
+      expect(model.id).length(24);
+      expect(model.id).match(/[a-f,0-9]{24}/);
+    });
+
+    it('allows to use custom id function', function() {
+      // body...
+    });
   });
 
   describe('collection', function() {
     it('generates id on create');
   });
 });
-
-// expect(@storage.mid()).toMatch /[a-f,0-9]{24}/
