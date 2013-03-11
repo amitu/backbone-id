@@ -1,3 +1,3 @@
-# Backbone.Timestamp
+# Backbone.Id
 
     console.log('comming soon...')
