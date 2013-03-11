@@ -12,7 +12,7 @@
   "readmeFilename": "README.md",
   "scripts": {
     "build": "./node_modules/grunt/bin/grunt",
-    "stat": "cloc backbone.position.js && cloc test/ --by-file",
+    "stat": "cloc backbone.id.js && cloc test/ --by-file",
     "test": "./node_modules/testem/testem.js ci"
   },
   "devDependencies": {

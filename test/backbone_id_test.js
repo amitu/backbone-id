@@ -8,6 +8,7 @@ describe('Backbone.Id', function() {
     }
   });
   Backbone.Id(Book);
+  Backbone.sync = function() {};
 
   describe('model', function() {
     it('generates uuid-like id automatically', function() {
@@ -18,19 +19,34 @@ describe('Backbone.Id', function() {
 
        expect(book.id).exist;
        expect(book.get('_id')).length(36);
-       // About UUID format https://gist.github.com/jed/982883#file-readme-md
        expect(book.id).match(/^[a-f,0-9]{8}\-[a-f,0-9]{4}\-4[a-f,0-9]{3}\-[a-b,8-9][a-f,0-9]{3}\-[a-f,0-9]{12}$/);
     });
 
     it('isNew works as expect', function() {
-      // body...
+      var book = new Book({ title: 'The Hobbit' });
+      expect(book.isNew()).equal(true);
+    });
+
+    it('removes _new pseudo attribute on first sync', function() {
+      var Model = Backbone.Model.extend({
+        sync: function(method, model, options) {
+          return expect(method).equal('create');
+        }
+      });
+
+      Backbone.Id(Model);
+      var model = new Model({ name: 'test' });
+      model.save();
+
+      expect(_.values(model.attributes)).length(2);
+      expect(model.isNew()).equal(false);
     });
 
     it('does not change existing id', function() {
       // body...
     });
 
-    it('does not change id on updates', function() {
+    it('does not change id on update', function() {
       // body...
     });
 
