@@ -11,7 +11,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "scripts": {
-    "build": "./node_modules/grunt/bin/grunt",
+    "build": "node -e 'require(\"grunt\").cli()'",
     "stat": "cloc backbone.id.js && cloc test/ --by-file",
     "test": "./node_modules/testem/testem.js ci"
   },

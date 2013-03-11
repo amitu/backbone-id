@@ -16,7 +16,6 @@ describe('Backbone.Id', function() {
      expect(book.get('title')).equal('The Lord of the Rings');
      expect(book.get('author')).equal('unknown');
 
-     expect(book.id).exist;
      expect(book.get('_id')).length(36);
      expect(book.id).match(/^[a-f,0-9]{8}\-[a-f,0-9]{4}\-4[a-f,0-9]{3}\-[a-b,8-9][a-f,0-9]{3}\-[a-f,0-9]{12}$/);
   });

@@ -32,8 +32,8 @@
       , defaults    = Model.prototype.defaults
       , sync        = Model.prototype.sync;
 
-    if (method === 'mongo') method = mongo;
-    if (!method || method === 'guid') method = guid;
+    if (method == 'mongo') method = mongo;
+    if (!method || method == 'guid') method = guid;
 
     Model.prototype.defaults = function() {
       var defaultValues = _.isFunction(defaults) ? defaults() : defaults || {}
