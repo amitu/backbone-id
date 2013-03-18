@@ -1,5 +1,5 @@
 // ...
-// https://github.com/Ask11/backbone.id
+// https://github.com/Ask11/backbone-id
 //
 // (c) 2013, Aleksey Kulikov
 // May be freely distributed according to MIT license.

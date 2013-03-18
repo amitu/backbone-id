@@ -7,7 +7,7 @@
     "vendor/underscore.js",
     "vendor/backbone.js",
     "vendor/chai.js",
-    "backbone.id.js",
+    "backbone-id.js",
     "test/**/*.js"
   ]
 }
