@@ -1,7 +1,7 @@
 {
   "name": "backbone-id",
-  "version": "0.1.1",
-  "description": "...",
+  "version": "0.1.2",
+  "description": "Id generator for Backbone.Model",
   "repository": {
     "type": "git",
     "url": "git://github.com/Ask11/backbone-id.git"
