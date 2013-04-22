@@ -68,6 +68,12 @@ describe('Backbone.Id', function() {
     expect(book.id).equal(1);
   });
 
+  it('does not add _new when id exists', function() {
+    var book = new Book({ _id: 'asd', title: 'Romeo & Juliet' });
+    expect(book.has('_new')).equal(false);
+    expect(book.isNew()).equal(false);
+  });
+
   it('generates id on collection.create', function () {
     var Library = Backbone.Collection.extend({
       model: Book

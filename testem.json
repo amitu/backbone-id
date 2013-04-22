@@ -8,6 +8,6 @@
     "vendor/backbone.js",
     "vendor/chai.js",
     "backbone-id.js",
-    "test/**/*.js"
+    "test/*.js"
   ]
 }

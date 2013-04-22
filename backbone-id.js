@@ -30,17 +30,24 @@
   Backbone.Id = function(Model, method) {
     var idAttribute = Model.prototype.idAttribute
       , defaults    = Model.prototype.defaults
-      , sync        = Model.prototype.sync;
+      , sync        = Model.prototype.sync
+      , initialize  = Model.prototype.initialize;
 
     if (method == 'mongo') method = mongo;
     if (!method || method == 'guid') method = guid;
 
     Model.prototype.defaults = function() {
-      var defaultValues = _.isFunction(defaults) ? defaults() : defaults || {}
-        , backboneId    = { _new: true };
+      var defaultValues = _.isFunction(defaults) ? defaults() : defaults || {};
 
-      backboneId[idAttribute] = method();
-      return _.defaults(defaultValues, backboneId);
+      var id = method();
+      var backboneId = { _new: id };
+      backboneId[idAttribute] = id;
+      return _.defaults({}, defaultValues, backboneId);
+    };
+
+    Model.prototype.initialize = function() {
+      initialize.apply(this, arguments);
+      if (this.get(idAttribute) !== this.get('_new')) this.unset('_new');
     };
 
     Model.prototype.isNew = function() {
