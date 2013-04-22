@@ -17,8 +17,7 @@
   "devDependencies": {
     "chai": "latest",
     "testem": "latest",
-    "jquery-browser": "~1.9.1",
     "underscore": "~1.4.4",
-    "backbone": "~0.9.10"
+    "backbone": "~1.0.0"
   }
 }
