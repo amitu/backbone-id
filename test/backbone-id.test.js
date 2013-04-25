@@ -7,8 +7,11 @@ describe('Backbone.Id', function() {
       author: 'unknown'
     }
   });
-  Backbone.Id(Book);
-  Backbone.sync = function() {};
+
+  before(function() {
+    Backbone.Id(Book);
+    Backbone.sync = function() {};
+  });
 
   it('generates uuid-like id automatically', function() {
      var book = new Book({ title: 'The Lord of the Rings' });
