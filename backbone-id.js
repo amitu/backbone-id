@@ -46,8 +46,8 @@
     };
 
     Model.prototype.initialize = function() {
-      initialize.apply(this, arguments);
       if (this.get(idAttribute) !== this.get('_new')) this.unset('_new');
+      return initialize.apply(this, arguments);
     };
 
     Model.prototype.isNew = function() {
