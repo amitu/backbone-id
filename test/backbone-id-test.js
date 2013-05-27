@@ -8,10 +8,8 @@ describe('Backbone.Id', function() {
     }
   });
 
-  before(function() {
-    Backbone.Id(Book);
-    Backbone.sync = function() {};
-  });
+  Backbone.Id(Book);
+  Backbone.sync = function() {};
 
   it('generates uuid-like id automatically', function() {
      var book = new Book({ title: 'The Lord of the Rings' });

@@ -1,4 +1,4 @@
-// ...
+// Id generator for Backbone.Model
 // https://github.com/Ask11/backbone-id
 //
 // (c) 2013, Aleksey Kulikov
@@ -33,8 +33,8 @@
     var sync        = Model.prototype.sync;
     var initialize  = Model.prototype.initialize;
 
-    if (method == 'mongo') method = mongo;
-    if (!method || method == 'guid') method = guid;
+    if (method === 'mongo') method = mongo;
+    if (!method || method === 'guid') method = guid;
 
     Model.prototype.defaults = function() {
       var defaultAttrs = _.isFunction(defaults) ? defaults() : defaults || {};
