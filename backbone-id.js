@@ -7,11 +7,11 @@
 ;(function(Backbone, _) {
   'use strict';
 
-  // Basic implementation of ObjectId generator
+  // Implementation of ObjectId generator
   // http://docs.mongodb.org/manual/core/object-id/
-  var increment = 0x1000000
-    , localId1  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1)
-    , localId2  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1);
+  var increment = 0x1000000;
+  var localId1  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1);
+  var localId2  = ((1+Math.random())*0x100000 | 0).toString(16).substring(1);
 
   function mongo() {
     var dateNow = ((new Date()).getTime()/100 | 0).toString(16);
@@ -28,22 +28,22 @@
   }
 
   Backbone.Id = function(Model, method) {
-    var idAttribute = Model.prototype.idAttribute
-      , defaults    = Model.prototype.defaults
-      , sync        = Model.prototype.sync
-      , initialize  = Model.prototype.initialize;
+    var idAttribute = Model.prototype.idAttribute;
+    var defaults    = Model.prototype.defaults;
+    var sync        = Model.prototype.sync;
+    var initialize  = Model.prototype.initialize;
 
     if (method == 'mongo') method = mongo;
     if (!method || method == 'guid') method = guid;
 
     Model.prototype.defaults = function() {
-      var defaultValues = _.isFunction(defaults) ? defaults() : defaults || {};
+      var defaultAttrs = _.isFunction(defaults) ? defaults() : defaults || {};
+      var id           = method();
+      var attrs        = {};
 
-      var id    = method();
-      var attrs = {};
       this._new = id;
       attrs[idAttribute] = id;
-      return _.defaults({}, defaultValues, attrs);
+      return _.defaults({}, defaultAttrs, attrs);
     };
 
     Model.prototype.initialize = function() {
