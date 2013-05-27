@@ -39,24 +39,25 @@
     Model.prototype.defaults = function() {
       var defaultValues = _.isFunction(defaults) ? defaults() : defaults || {};
 
-      var id = method();
-      var backboneId = { _new: id };
-      backboneId[idAttribute] = id;
-      return _.defaults({}, defaultValues, backboneId);
+      var id    = method();
+      var attrs = {};
+      this._new = id;
+      attrs[idAttribute] = id;
+      return _.defaults({}, defaultValues, attrs);
     };
 
     Model.prototype.initialize = function() {
-      if (this.get(idAttribute) !== this.get('_new')) this.unset('_new');
+      if (this.get(idAttribute) !== this._new) delete this._new;
       return initialize.apply(this, arguments);
     };
 
     Model.prototype.isNew = function() {
-      return !!this.get('_new');
+      return !! this._new;
     };
 
     Model.prototype.sync = function() {
       var defer = sync.apply(this, arguments);
-      if (this.isNew()) this.unset('_new');
+      if (this.isNew()) delete this._new;
       return defer;
     };
   };
