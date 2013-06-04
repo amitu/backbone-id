@@ -1,22 +1,12 @@
 {
-  "name": "backbone-id",
-  "version": "0.2.0",
-  "description": "Id generator for Backbone.Model",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/ask11/backbone-id.git"
-  },
-  "author": "Aleksey Kulikov",
-  "license": "MIT",
   "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install",
     "test": "./node_modules/testem/testem.js ci",
     "start": "./node_modules/testem/testem.js",
-    "stat": "cloc backbone-id.js && cloc test/ --by-file"
+    "stat": "cloc backbone-id.js --quiet && cloc test/ --quiet"
   },
   "devDependencies": {
-    "chai": "1.5.0",
-    "testem": "0.2.86",
-    "underscore": "1.4.4",
-    "backbone": "1.0.0"
+    "testem": "~0.2.96",
+    "bower": "~0.9.2"
   }
 }

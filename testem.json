@@ -3,10 +3,10 @@
   "launch_in_ci": ["phantomjs"],
   "launch_in_dev": ["phantomjs"],
   "src_files": [
-    "vendor/jquery.js",
-    "vendor/underscore.js",
-    "vendor/backbone.js",
-    "vendor/chai.js",
+    "components/jquery/jquery.js",
+    "components/underscore/underscore.js",
+    "components/backbone/backbone.js",
+    "components/chai/chai.js",
     "backbone-id.js",
     "test/*.js"
   ]
