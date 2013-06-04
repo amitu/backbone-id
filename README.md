@@ -60,10 +60,11 @@ model.id; // => 102
 
 ## Development
 
-  - `npm install` to install dependencies
+  - `npm install` to install development dependencies: bower & testem.
   - `npm test` to ensure that all tests pass
   - `npm start` to run test watcher on [localhost:7357](http://localhost:7357/)
 
 ## Licence
 
-  Aleksey Kulikov, MIT
+  (c) 2013, Aleksey Kulikov
+  May be freely distributed according to MIT license.
