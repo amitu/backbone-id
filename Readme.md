@@ -66,5 +66,4 @@ model.id; // => 102
 
 ## Licence
 
-  (c) 2013, Aleksey Kulikov
-  May be freely distributed according to MIT license.
+  Aleksey Kulikov, [MIT](http://ask11.mit-license.org/)
