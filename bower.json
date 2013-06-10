@@ -1,9 +1,9 @@
 {
   "name": "backbone-id",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Id generator for Backbone.Model",
   "author": "Aleksey Kulikov",
-  "main": "backbone-id.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/ask11/backbone-id.git"

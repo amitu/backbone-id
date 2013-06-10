@@ -1,3 +1,9 @@
+### 0.2.2 / 2013-06-10
+
+  * use index.js as a main file
+  * notifications for .travis.yml
+  * use mit-license.org as LICENCE source
+
 ### 0.2.1 / 2013-06-04
 
   * migration to bower as a package manager
@@ -12,4 +18,4 @@
 
 ## 0.1.0 / 2013-03-11
 
-  - initial Release
+  - initial release
