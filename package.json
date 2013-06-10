@@ -3,10 +3,10 @@
     "postinstall": "./node_modules/bower/bin/bower install",
     "test": "./node_modules/testem/testem.js ci",
     "start": "./node_modules/testem/testem.js",
-    "stat": "cloc backbone-id.js --quiet && cloc test/ --quiet"
+    "stat": "cloc index.js --quiet && cloc test/ --quiet"
   },
   "devDependencies": {
-    "testem": "~0.2.96",
+    "testem": "~0.2.98",
     "bower": "~0.9.2"
   }
 }
