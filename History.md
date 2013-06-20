@@ -1,3 +1,8 @@
+### 0.2.3 / 2013-06-20
+
+  * add `Backbone.Id.guid` and `Backbone.Id.mongo` as a standalone id generators
+  * updated bower and testem configs
+
 ### 0.2.2 / 2013-06-10
 
   * use index.js as a main file

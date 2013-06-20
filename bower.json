@@ -1,6 +1,6 @@
 {
   "name": "backbone-id",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Id generator for Backbone.Model",
   "author": "Aleksey Kulikov",
   "main": "index.js",
@@ -14,14 +14,11 @@
     "underscore": "~1.4.4"
   },
   "devDependencies": {
-    "chai": "~1.6.0"
+    "chai": "~1.6.1"
   },
   "ignore": [
     "**/.*",
-    "node_modules",
-    "components",
     "test",
-    "package.json",
-    "testem.json"
+    "package.json"
   ]
 }
