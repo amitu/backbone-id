@@ -5,6 +5,10 @@
   Generates Id for new instance of Backbone.Model on the client.
   Sometimes it useful to generate model's id imediately, in order to create relationships with other models and generate views. Supports [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier), [MongoDB ObjectId](http://docs.mongodb.org/manual/core/object-id/) and custom generators.
 
+## Installation
+
+    $ bower install backbone-id --save
+
 ## Example
 
 ```js
