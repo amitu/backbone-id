@@ -1,8 +1,5 @@
 // Id generator for Backbone.Model
 // https://github.com/ask11/backbone-id
-//
-// (c) 2013, Aleksey Kulikov
-// May be freely distributed according to MIT license.
 
 ;(function(Backbone, _) {
   'use strict';
@@ -61,4 +58,8 @@
       return defer;
     };
   };
+
+  /// expose id generators
+  Backbone.Id.mongo = mongo;
+  Backbone.Id.guid  = guid;
 }).call(this, Backbone, _);

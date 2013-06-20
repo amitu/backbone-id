@@ -11,6 +11,11 @@ describe('Backbone.Id', function() {
   Backbone.Id(Book);
   Backbone.sync = function() {};
 
+  it('has #mongo and #guid generators', function() {
+    expect(Backbone.Id.mongo()).length(24);
+    expect(Backbone.Id.guid()).length(36);
+  });
+
   it('generates uuid-like id automatically', function() {
      var book = new Book({ title: 'The Lord of the Rings' });
 
