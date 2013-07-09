@@ -3,10 +3,10 @@
   "launch_in_ci": ["phantomjs"],
   "launch_in_dev": ["phantomjs"],
   "src_files": [
-    "components/jquery/jquery.js",
-    "components/underscore/underscore.js",
-    "components/backbone/backbone.js",
-    "components/chai/chai.js",
+    "bower_components/jquery/jquery.js",
+    "bower_components/underscore/underscore.js",
+    "bower_components/backbone/backbone.js",
+    "bower_components/chai/chai.js",
     "index.js",
     "test/*.js"
   ]

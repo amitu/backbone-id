@@ -1,3 +1,9 @@
+## 0.3.0 / 2013-07-..
+
+  * update Reamde with isNew explanation
+  * update bower to 0.10.0
+  * update underscore to 1.5.0
+
 ### 0.2.3 / 2013-06-20
 
   * add `Backbone.Id.guid` and `Backbone.Id.mongo` as a standalone id generators
