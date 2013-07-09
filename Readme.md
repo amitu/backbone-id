@@ -36,7 +36,7 @@ book.isNew(); // => true
 ### Backbone.Id(Model, method)
 
   Plugin adds one `Backbone.Id` function to patch existing Backbone.Model with id-generator functionality.
-  By default it uses UUID, and shiped with MongoDB's ObjectId generator
+  By default it uses UUID, and shiped with MongoDB's ObjectId generator:
 
 ```js
 Backbone.Id(Book, 'mongo');
@@ -66,6 +66,13 @@ model.id; // => 102
 ### Backbone.Id.mongo()
 
   Generates [MongoDB ObjectId](http://docs.mongodb.org/manual/core/object-id/).
+
+### model#isNew
+
+  In Backbone docs we see explanation of `isNew`:
+  > Has this model been saved to the server yet? If the model does not yet have an id, it is considered to be new.
+
+  In our case isNew means: was save() method called or not, because model gets id immediately.
 
 ## Development
 
