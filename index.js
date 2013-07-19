@@ -54,7 +54,8 @@
 
     Model.prototype.sync = function() {
       var defer = sync.apply(this, arguments);
-      if (this.isNew()) delete this._new;
+      if (this.isNew())
+        this.once('sync', function(model) { delete model._new; });
       return defer;
     };
   };
